@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        #asciiResult {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>ASCII Converter</h1>
+<label for="inputChar">Digite uma letra:</label>
+<input type="text" id="inputChar" maxlength="1">
+<button onclick="convertToASCII()">Converter</button>
+<div id="asciiResult"></div>
+
+<script>
+    function convertToASCII() {
+        // Obtém o valor do campo de entrada
+        var inputChar = document.getElementById("inputChar").value;
+
+        // Verifica se foi inserido apenas uma letra
+        if (inputChar.length === 1) {
+            // Obtém o código ASCII da letra inserida
+            var asciiCode = inputChar.charCodeAt(0);
+
+            // Exibe o resultado
+            document.getElementById("asciiResult").innerText = "O código ASCII de '" + inputChar + "' é: " + asciiCode;
+        } else {
+            alert("Por favor, insira apenas uma letra.");
+        }
+    }
+</script>
+</body>
+</html>
